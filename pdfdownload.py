@@ -24,7 +24,7 @@ def download_pdfs():
     # Build a list of pairs (url, filename) for all PDFs in the index
     for a in soup.find_all("a", href=True):
         text = a["href"]
-        if ("/doc" in text) and (("/download" in text)):
+        if ("/doc" in text) and ("/download" in text):
             record = (dl_prefix + text, text.split("/")[2] + ".pdf")
             pdflist.append(record)
 
