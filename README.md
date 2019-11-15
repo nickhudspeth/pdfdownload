@@ -12,7 +12,7 @@ From the pdfdownload directory, activate the virtual environment with:
 
 To run the script, issue the command:
 
-```python
+```bash
 python pdfdownload.py <output directory>
 ```
 
