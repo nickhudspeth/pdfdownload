@@ -36,7 +36,7 @@ def download_pdfs():
         fprefix = outdir_prefix + "/" + record[1]
         fname = fprefix + ".pdf"
         print("Downloading " + record[1] + f"    ({idx + 1} of {len(pdflist)})")
-        opener.retrieve(record[0], outdir_prefix + "/" + record[1])
+        opener.retrieve(record[0], fname)
 
 
 if __name__ == "__main__":
