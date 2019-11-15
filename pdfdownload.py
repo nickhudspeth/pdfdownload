@@ -1,14 +1,11 @@
 import urllib.request
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
-import os
 import sys
 
 index_page_url = "https://www.mass.gov/info-details/municipal-vulnerability-preparedness-mvp-program-planning-reports"
 dl_prefix = "https://www.mass.gov"
-
 pdflist = []
-
 outdir_prefix = "./files"
 
 # Override the default user-agent string so the server does not reject our request
