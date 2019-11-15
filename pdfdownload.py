@@ -30,8 +30,7 @@ def download_pdfs():
 
     # Download all files to specified directory
     for idx, record in enumerate(pdflist):
-        fprefix = outdir_prefix + "/" + record[1]
-        fname = fprefix + ".pdf"
+        fname = outdir_prefix + "/" + record[1] + ".pdf"
         print("Downloading " + record[1] + f"    ({idx + 1} of {len(pdflist)})")
         opener.retrieve(record[0], fname)
 
