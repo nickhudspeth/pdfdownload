@@ -1,0 +1,4 @@
+# Ignore vscode configuration files
+.vscode/
+# Ignore all downloaded PDF files
+files/*.pdf
