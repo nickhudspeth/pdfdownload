@@ -25,14 +25,16 @@ def download_pdfs():
     for a in soup.find_all("a", href=True):
         text = a["href"]
         if ("/doc" in text) and (("/download" in text)):
-            record = (dl_prefix + text, text.split("/")[2])
+            record = (dl_prefix + text, text.split("/")[2] + ".pdf")
             pdflist.append(record)
 
     # Download all files to specified directory
     for idx, record in enumerate(pdflist):
-        fname = outdir_prefix + "/" + record[1] + ".pdf"
-        print("Downloading " + record[1] + f"    ({idx + 1} of {len(pdflist)})")
-        opener.retrieve(record[0], fname)
+        url = record[0]
+        filename = record[1]
+        filepath = outdir_prefix + "/" + filename
+        print("Downloading " + filename + f"    ({idx + 1} of {len(pdflist)})")
+        opener.retrieve(url, filepath)
 
 
 if __name__ == "__main__":
