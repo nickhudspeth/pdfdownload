@@ -2,11 +2,22 @@ import urllib.request
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
 import sys
+import ssl
+
 
 index_page_url = "https://www.mass.gov/info-details/municipal-vulnerability-preparedness-mvp-program-planning-reports"
 dl_prefix = "https://www.mass.gov"
 pdflist = []
 outdir_prefix = "./files"
+
+try:
+   _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    # Legacy Python that doesn't verify HTTPS certificates by default
+    pass
+else:
+    # Handle target environment that doesn't support HTTPS verification
+    ssl._create_default_https_context = _create_unverified_https_context
 
 # Override the default user-agent string so the server does not reject our request
 class URLopener(urllib.request.FancyURLopener):

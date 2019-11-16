@@ -2,3 +2,8 @@
 .vscode/
 # Ignore all downloaded PDF files
 files/*.pdf
+
+build/
+dist/
+*.R
+*.sprc
