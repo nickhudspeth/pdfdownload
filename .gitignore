@@ -6,4 +6,5 @@ files/*.pdf
 build/
 dist/
 *.R
-*.sprc
+*.spec
+__pycache__/
